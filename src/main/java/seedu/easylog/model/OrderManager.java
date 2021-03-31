@@ -38,6 +38,35 @@ public class OrderManager {
     }
 
     /**
+     * Deletes an order from item list by name.
+     *
+     * @param name the name of the customer's order to be deleted
+     */
+    public void deleteOrderByname(String name) {
+        for (int i = 0; i < orderList.size(); i++) {
+            if (name.equals(orderList.get(i).customerName)) {
+                orderList.remove(i);
+                break;
+            }
+        }
+    }
+
+    /**
+     * Changes relevant string to order type.
+     *
+     * @param name the name of string to be changed
+     * @return string in order type if in the order list, null otherwise
+     */
+    public Order changeOrderFormat(String name) {
+        for (int i = 0; i < orderList.size(); i++) {
+            if (name.equals(orderList.get(i).customerName)) {
+                return orderList.get(i);
+            }
+        }
+        return null;
+    }
+
+    /**
      * Gets the item list under a specific order.
      *
      * @param index the number of this order
