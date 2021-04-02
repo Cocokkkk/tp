@@ -138,10 +138,14 @@ commands according to the user's input. This component consists of 3 different c
 
 ### 2.5 Command Component
 
-![Command Diagram](https://user-images.githubusercontent.com/60378963/113083308-92802080-920e-11eb-8e4b-66bc7fdf79f2.png)
+![Command Class Diagram](https://user-images.githubusercontent.com/60378963/113397031-ff421900-93ce-11eb-8e31-a9207d23f2f1.png)
+All four ExitCommand, OrdersCommand, ItemsCommand and HelpCommand classes extend the abstract Command class.
+OrdersCommand and ItemsCommand Classes are abstract class and it has various Command classes (e.g. OrdersXXXCommand, ItemsXXXCommand) extending them, in order to
+deal with different command actions ask by the user.
 
-Different Commands execute by the program.
-
+1. Once the user input is been parsed by the `Parser` class new `Command` object will be created.
+2. Different actions will be executed by the execute method in different `Command` class.
+3. Command execution take place and it will affect the `Model` and its data (e.g. adding a new item).
 ### 2.6 Model Component
 
 ![Command Diagram](https://user-images.githubusercontent.com/75139323/113146529-5f677c80-9262-11eb-9cff-300d5496d089.png)
