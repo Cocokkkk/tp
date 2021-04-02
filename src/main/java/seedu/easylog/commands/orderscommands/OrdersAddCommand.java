@@ -17,8 +17,8 @@ import seedu.easylog.model.OrderManager;
 public class OrdersAddCommand extends OrdersCommand {
 
     public void execute(String customerName, ItemManager itemManager, OrderManager orderManager)
-            throws EmptyNameException, EmptyItemListException, RepeatedOrderException {
-        if (customerName.equals("")) {
+            throws EmptyNameException, EmptyItemListException {
+        if (customerName.trim().equals("")) {
             throw new EmptyNameException();
         }
         if (itemManager.getItemList().isEmpty()) {

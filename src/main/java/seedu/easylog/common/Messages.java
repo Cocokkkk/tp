@@ -74,6 +74,10 @@ public class Messages {
             + "OOPS!!! The order number is missing!\n"
             + "Please complete the order information! :)\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_EMPTY_ORDER_INFORMATION = MESSAGE_LINE
+            + "OOPS!!! The order information is missing!\n"
+            + "Please complete the order index or customer name! :)\n"
+            + MESSAGE_LINE;
     public static final String MESSAGE_INVALID_ITEM_NUMBER = MESSAGE_LINE
             + "OOPS!!! The item number is invalid!\n"
             + "Please input the item information again! :)\n"
@@ -121,6 +125,7 @@ public class Messages {
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ITEM_LIST = MESSAGE_LINE
             + "There is no item in the system at the moment.\n"
+            + "Please add items to the system first.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ORDER_LIST = MESSAGE_LINE
             + "There is no order at the moment.\n"

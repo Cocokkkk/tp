@@ -13,7 +13,7 @@ public class OrdersDoneCommand extends OrdersCommand {
      */
     public void execute(String ordersArg, OrderManager orderManager)
             throws EmptyNumberException, InvalidNumberException {
-        if (ordersArg.equals("")) {
+        if (ordersArg.trim().equals("")) {
             throw new EmptyNumberException();
         }
         int orderIndex = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;

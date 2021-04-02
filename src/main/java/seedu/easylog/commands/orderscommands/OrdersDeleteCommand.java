@@ -1,6 +1,7 @@
 package seedu.easylog.commands.orderscommands;
 
 import seedu.easylog.common.Constants;
+import seedu.easylog.exceptions.EmptyInformationException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.OrderNotFoundException;
@@ -12,9 +13,9 @@ public class OrdersDeleteCommand extends OrdersCommand {
      * Deletes a single order from the list of orders.
      */
     public void execute(String ordersArg, OrderManager orderManager)
-            throws EmptyNumberException, InvalidNumberException, OrderNotFoundException {
-        if (ordersArg.equals("")) {
-            throw new EmptyNumberException();
+            throws EmptyInformationException, InvalidNumberException, OrderNotFoundException {
+        if (ordersArg.trim().equals("")) {
+            throw new EmptyInformationException();
         }
         try {
             int index = Integer.parseInt(ordersArg) - Constants.ARRAY_OFFSET;

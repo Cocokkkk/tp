@@ -10,7 +10,7 @@ public class OrdersFindCommand extends OrdersCommand {
      */
     public void execute(String customerName, OrderManager orderManager) 
         throws EmptyNameException, OrderNotFoundException {
-        if (customerName.equals("")) {
+        if (customerName.trim().equals("")) {
             throw new EmptyNameException();
         }
         orderManager.findOrder(customerName);

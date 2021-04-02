@@ -29,6 +29,9 @@ public class Ui {
         System.out.print(Messages.MESSAGE_SHOW_ALL_COMMANDS);
     }
 
+    /**
+     * Prints all commands related to items and brief descriptions of these commands.
+     */
     public void showItemsHelp() {
         System.out.print(Messages.MESSAGE_SHOW_ITEMS_COMMANDS);
     }
@@ -51,6 +54,10 @@ public class Ui {
         System.out.print(Messages.MESSAGE_REPEAT_ITEM);
     }
 
+    /**
+     * Prints a message to notify the user that there is no input customer name for this order.
+     * This means that the user should complete the customer name.
+     */
     public void showOrderEmptyCustomerName() {
         System.out.print(Messages.MESSAGE_EMPTY_ORDER_CUSTOMER_NAME);
     }
@@ -61,6 +68,14 @@ public class Ui {
      */
     public void showOrderEmptyNumber() {
         System.out.print(Messages.MESSAGE_EMPTY_ORDER_NUMBER);
+    }
+
+    /**
+     * Prints a message to notify the user that there is no input order information.
+     * This means the user should complete the order index or the customer name of this order.
+     */
+    public void showOrderEmptyInformation() {
+        System.out.print(Messages.MESSAGE_EMPTY_ORDER_INFORMATION);
     }
 
     public void showDeletedItem(Item item) {
@@ -122,6 +137,9 @@ public class Ui {
         }
     }
 
+    /**
+     * Prints all commands related to orders and brief descriptions of these commands.
+     */
     public void showOrdersHelp() {
         System.out.print(Messages.MESSAGE_SHOW_ORDERS_RELATED_COMMANDS);
     }
@@ -130,6 +148,10 @@ public class Ui {
         System.out.print(Messages.MESSAGE_ADD_ITEMS_TO_ORDER);
     }
 
+    /**
+     * Prints a message to notify the user that the order has been successfully added.
+     * @param order an object to store order's information
+     */
     public void showOrderAdded(Order order) {
         System.out.print(Messages.MESSAGE_LINE);
         System.out.println(order.getAddOrderMessage());
@@ -137,9 +159,9 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that this order is deleted successfully.
+     * Prints a message to notify the user that the order has been successfully deleted.
      *
-     * @param order an object to store orders information
+     * @param order an object to store order's information
      */
     public void showOrderDeleted(Order order) {
         System.out.print(Messages.MESSAGE_LINE);
@@ -444,6 +466,10 @@ public class Ui {
         }
     }
 
+    /**
+     * Prints a message to notify the user that the input customer name is not found.
+     * This means this order does not exist in the order list.
+     */
     public void showOrderNotFound() {
         System.out.print(Messages.MESSAGE_ORDER_NOT_FOUND);
     }
