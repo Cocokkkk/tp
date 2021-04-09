@@ -44,6 +44,7 @@ public class OrdersDeleteCommand extends OrdersCommand {
                 if ((index < 0) || (index >= size)) {
                     throw new InvalidNumberException();
                 }
+                // @@ author e00426142
                 if (!orderManager.getOrder(index).getStatus()) {
                     // return item stock to inventory if order is not complete.
                     int itemStockIndex = 0;
@@ -54,6 +55,7 @@ public class OrdersDeleteCommand extends OrdersCommand {
                         item.setItemStock(itemUpdateStock);
                         ++itemStockIndex;
                     }
+                    // @@ author Cocokkkk
                     ui.showOrderDeleted(orderManager.getOrder(index));
                     orderManager.deleteOrder(index);
                     stopAskingForOrderIndex = true;

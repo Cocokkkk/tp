@@ -109,7 +109,7 @@ public class Messages {
     public static final String MESSAGE_NON_INTEGER_DELETE_ORDER_INDEX = MESSAGE_LINE
             + "Non-Integer order index.\n";
     public static final String MESSAGE_INVALID_DELETE_ORDER_INDEX = MESSAGE_LINE
-            + "Invalid order index.\n";
+            + "Out-of-range order index.\n";
     public static final String MESSAGE_EMPTY_ITEM_NUMBER = MESSAGE_LINE
             + "OOPS!!! The item number is missing!\n"
             + "Please complete the item information! :)\n"
