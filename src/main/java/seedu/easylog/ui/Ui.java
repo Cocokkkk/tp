@@ -70,8 +70,8 @@ public class Ui {
      * Prints a message to notify the user that there is no input order information.
      * This means the user should complete the order index or the customer name of this order.
      */
-    public void showOrderEmptyInformation() {
-        System.out.print(Messages.MESSAGE_EMPTY_ORDER_INFORMATION);
+    public void showOrderEmptyIndex() {
+        System.out.print(Messages.MESSAGE_EMPTY_ORDER_INDEX);
     }
 
 
@@ -153,6 +153,13 @@ public class Ui {
      */
     public void showEmptyItemList() {
         System.out.print(Messages.MESSAGE_EMPTY_ITEM_LIST);
+    }
+
+    /**
+     * Prints a message to notify the user that the order list is empty.
+     */
+    public void showEmptyOrderList() {
+        System.out.print(Messages.MESSAGE_EMPTY_ORDER_LIST_TO_DELETE);
     }
 
     public void showAddItemFirst() {
@@ -298,14 +305,33 @@ public class Ui {
     }
 
     /**
-     * Prints a message to notify the user that the input  is not numeric.
-     * This means the user should input a numeric and valid field.
+     * Prints a message to notify the user that the input order index is empty.
+     * This means the user should input a non-empty and valid order index.
      */
-    public void showNonIntegerItemPriceInputForAdd() {
-        System.out.print(Messages.MESSAGE_NON_INTEGER_ITEM_PRICE_INPUT_FOR_ADD);
+    public void showEmptyOrderIndexToDelete() {
+        System.out.print(Messages.MESSAGE_EMPTY_DELETE_ORDER_INDEX);
     }
 
+    /**
+     * Prints a message to notify the user that the input order index is not an integer number.
+     * This means the user should check the order index and input again.
+     */
+    public void showNonIntegerOrderIndexToDelete() {
+        System.out.print(Messages.MESSAGE_NON_INTEGER_DELETE_ORDER_INDEX);
+    }
 
+    /**
+     * Prints a message to notify the user that the input order index is invalid (out of range).
+     * This means the user should check the order index and input again.
+     */
+    public void showInvalidOrderIndexToDelete() {
+        System.out.print(Messages.MESSAGE_INVALID_DELETE_ORDER_INDEX);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item index is non-numeric.
+     * This means the user should input a numeric and valid item index.
+     */
     public void showNonNumericInputForUpdate() {
         System.out.print(Messages.MESSAGE_NON_NUMERIC_INPUT_INDEX_FOR_UPDATE);
     }
@@ -399,7 +425,24 @@ public class Ui {
      * in order for a field of the item to be updated later.
      */
     public void askForItemIndex() {
-        System.out.print(Messages.MESSAGE_ASK_FOR_ITEM_INDEX);
+        System.out.print(Messages.MESSAGE_ASK_FOR_ITEM_INDEX_TO_UPDATE);
+    }
+
+    /**
+     * Prints a message to ask the user for the index of the order
+     * in order to be deleted later.
+     */
+    public void askForOrderIndex() {
+        System.out.print(Messages.MESSAGE_ASK_FOR_ORDER_INDEX_TO_DELETE);
+    }
+
+    /**
+     * Prints a message to notify the user that the orders delete command is entered wrongly.
+     * This means the user should input "orders delete" exactly if he / she
+     * really wants to execute a delete command for any order of interest.
+     */
+    public void showWrongOrdersDeleteCommand() {
+        System.out.print(Messages.MESSAGE_WRONG_ORDERS_DELETE_COMMAND);
     }
 
     /**
@@ -734,6 +777,14 @@ public class Ui {
      */
     public void showNonNumericItemStockInput() {
         System.out.println(Messages.MESSAGE_NON_NUMERIC_ITEM_STOCK);
+    }
+
+    /**
+     * Prints a message to notify the user that the input item name is too long.
+     * This means the user should input an alternative item name within 30 characters including spaces.
+     */
+    public void showItemNameTooLong() {
+        System.out.print(Messages.MESSAGE_ITEM_NAME_TOO_LONG);
     }
 
     public void showCustomerNameTooLong() {

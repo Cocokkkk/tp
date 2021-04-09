@@ -12,12 +12,14 @@ import seedu.easylog.common.Constants;
 import seedu.easylog.exceptions.CustomerNameTooLongException;
 import seedu.easylog.exceptions.EmptyNameException;
 import seedu.easylog.exceptions.EmptyItemListException;
-import seedu.easylog.exceptions.EmptyInformationException;
 import seedu.easylog.exceptions.InvalidItemStockException;
 import seedu.easylog.exceptions.EmptyNumberException;
 import seedu.easylog.exceptions.InvalidNumberException;
 import seedu.easylog.exceptions.OrderListAlreadyClearedException;
 import seedu.easylog.exceptions.OrderNotFoundException;
+import seedu.easylog.exceptions.EmptyOrderListException;
+import seedu.easylog.exceptions.EmptyOrderIndexException;
+import seedu.easylog.exceptions.WrongOrdersDeleteCommandException;
 
 import seedu.easylog.model.Item;
 import seedu.easylog.model.ItemManager;
@@ -49,14 +51,16 @@ public class OrdersParser extends Parser {
         case (Constants.COMMAND_DELETE):
             try {
                 new OrdersDeleteCommand().execute(ordersArg, orderManager);
-            } catch (EmptyInformationException e) {
-                ui.showOrderEmptyInformation();
+            } catch (EmptyOrderListException e) {
+                ui.showEmptyOrderList();
+            } catch (WrongOrdersDeleteCommandException e) {
+                ui.showWrongOrdersDeleteCommand();
+            } catch (EmptyOrderIndexException e) {
+                ui.showEmptyOrderIndexToDelete();
             } catch (InvalidNumberException e) {
-                ui.showInvalidOrderNumber();
+                ui.showInvalidOrderIndexToDelete();
             } catch (NumberFormatException e) {
-                ui.showNonIntegerOrderNumber();
-            } catch (OrderNotFoundException e) {
-                ui.showOrderNotFound();
+                ui.showNonIntegerOrderIndexToDelete();
             }
             break;
         case (Constants.COMMAND_LIST):

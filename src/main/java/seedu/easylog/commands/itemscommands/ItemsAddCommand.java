@@ -1,6 +1,7 @@
 package seedu.easylog.commands.itemscommands;
 
 import seedu.easylog.common.Constants;
+
 import seedu.easylog.exceptions.EmptyItemNameException;
 import seedu.easylog.exceptions.EmptyItemStockException;
 import seedu.easylog.exceptions.InvalidItemStockException;
@@ -9,6 +10,7 @@ import seedu.easylog.exceptions.NonIntegerItemStockException;
 import seedu.easylog.exceptions.NonNumericItemPriceException;
 import seedu.easylog.exceptions.NullItemNameException;
 import seedu.easylog.exceptions.NullItemStockException;
+import seedu.easylog.exceptions.ItemNameTooLongException;
 import seedu.easylog.model.Item;
 import seedu.easylog.model.ItemManager;
 
@@ -26,13 +28,17 @@ public class ItemsAddCommand extends ItemsCommand {
     public void execute(String itemDescription, ItemManager itemManager, ArrayList<String> itemDescriptionRecord)
             throws EmptyItemNameException, NonIntegerItemStockException, NonNumericItemPriceException,
             InvalidTotalItemStockException, NullItemNameException, NullItemStockException, EmptyItemStockException,
-            InvalidItemStockException {
+            InvalidItemStockException, ItemNameTooLongException {
         if (itemDescription == null) {
             throw new NullItemNameException();
         }
 
         if (itemDescription.equals("")) {
             throw new EmptyItemNameException();
+        }
+
+        if (itemDescription.length() > Constants.ITEM_NAME_LENGTH_LIMIT) {
+            throw new ItemNameTooLongException();
         }
 
         if (itemDescriptionRecord.contains(itemDescription)) {

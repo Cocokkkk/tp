@@ -10,6 +10,7 @@ import seedu.easylog.commands.itemscommands.ItemsPromptStockCommand;
 import seedu.easylog.commands.itemscommands.ItemsStatisticsCommand;
 import seedu.easylog.commands.itemscommands.ItemsUpdateCommand;
 import seedu.easylog.common.Constants;
+
 import seedu.easylog.exceptions.EmptyItemIndexException;
 import seedu.easylog.exceptions.EmptyItemNameException;
 import seedu.easylog.exceptions.EmptyItemPriceAndStockInputException;
@@ -36,6 +37,8 @@ import seedu.easylog.exceptions.WrongUpdateCommandException;
 import seedu.easylog.exceptions.EmptyItemListException;
 import seedu.easylog.exceptions.EmptyItemFieldException;
 import seedu.easylog.exceptions.InvalidItemFieldException;
+import seedu.easylog.exceptions.ItemNameTooLongException;
+
 import seedu.easylog.model.Item;
 import seedu.easylog.model.ItemManager;
 
@@ -67,6 +70,8 @@ public class ItemsParser extends Parser {
                 ui.showInvalidTotalItemStock();
             } catch (NullItemNameException e) {
                 ui.showNullItemName();
+            } catch (ItemNameTooLongException e) {
+                ui.showItemNameTooLong();
             } catch (NullItemStockException e) {
                 ui.showNullItemStock();
             } catch (EmptyItemStockException e) {

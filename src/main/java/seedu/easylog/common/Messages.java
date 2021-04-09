@@ -104,6 +104,12 @@ public class Messages {
             + "OOPS!!! The order number is invalid!\n"
             + "Please input the order information again! :)\n"
             + MESSAGE_LINE;
+    public static final String MESSAGE_EMPTY_DELETE_ORDER_INDEX = MESSAGE_LINE
+            + "Empty order index.\n";
+    public static final String MESSAGE_NON_INTEGER_DELETE_ORDER_INDEX = MESSAGE_LINE
+            + "Non-Integer order index.\n";
+    public static final String MESSAGE_INVALID_DELETE_ORDER_INDEX = MESSAGE_LINE
+            + "Invalid order index.\n";
     public static final String MESSAGE_EMPTY_ITEM_NUMBER = MESSAGE_LINE
             + "OOPS!!! The item number is missing!\n"
             + "Please complete the item information! :)\n"
@@ -148,7 +154,11 @@ public class Messages {
     public static final String MESSAGE_EMPTY_ORDER_LIST = MESSAGE_LINE
             + "There is no order at the moment.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_EMPTY_ORDER_INFORMATION = MESSAGE_LINE
+    public static final String MESSAGE_EMPTY_ORDER_LIST_TO_DELETE = MESSAGE_LINE
+            + "There is no order at the moment.\n"
+            + "Please add orders to the system first.\n"
+            + MESSAGE_LINE;
+    public static final String MESSAGE_EMPTY_ORDER_INDEX = MESSAGE_LINE
             + "OOPS!!! The order information is missing!\n"
             + "Please complete the order index or customer name! :)\n"
             + MESSAGE_LINE;
@@ -193,17 +203,9 @@ public class Messages {
             + "Empty item price.\n";
     public static final String MESSAGE_EMPTY_REVISED_ITEM_STOCK = MESSAGE_LINE
             + "Empty item stock.\n";
-    public static final String MESSAGE_NON_INTEGER_ITEM_PRICE_INPUT_FOR_ADD = MESSAGE_LINE
-            + "OOPS!!! The input for price is not an integer!\n"
-            + "Please retry items add command and give a number for price! :)\n"
-            + MESSAGE_LINE;
     public static final String MESSAGE_NON_NUMERIC_ITEM_STOCK_INPUT_FOR_ADD = MESSAGE_LINE
             + "OOPS!!! The input for price is not a number!\n"
             + "Please retry items add command and give a number for stock! :)\n"
-            + MESSAGE_LINE;
-    public static final String MESSAGE_NON_NUMERIC_INPUT_FOR_UPDATE = MESSAGE_LINE
-            + "OOPS!!! The input item is not a number!\n"
-            + "Please retry items update command and give a number for stock/price! :)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_NON_NUMERIC_INPUT_INDEX_FOR_UPDATE = MESSAGE_LINE
             + "Non-numeric item index.\n";
@@ -232,20 +234,23 @@ public class Messages {
             + MESSAGE_LINE;
     public static final String MESSAGE_WRONG_UPDATE_COMMAND = MESSAGE_LINE
             + "OOPS!!! I'm sorry! I don't know what that means.\n"
-            + "Do you mean \"items update\"? Alternatively, see \"items help\" for more information\n"
+            + "Do you mean \"items update\"? If so, input <items update>.\n"
+            + "Alternatively, input <items> or <help> for more information.\n"
             + MESSAGE_LINE;
-    public static final String MESSAGE_ASK_FOR_ITEM_INDEX = MESSAGE_LINE
-            + "Below is the exhaustive list for all items.\n"
-            + "May I know which item should be updated?\n"
-            + "Please input the index of the item of interest only.\n";
+    public static final String MESSAGE_ASK_FOR_ITEM_INDEX_TO_UPDATE = MESSAGE_LINE
+            + "Please input the index of the item you would like to update.\n";
+    public static final String MESSAGE_ASK_FOR_ORDER_INDEX_TO_DELETE = MESSAGE_LINE
+            + "Please input the index of the order you would like to delete.\n";
+    public static final String MESSAGE_WRONG_ORDERS_DELETE_COMMAND = MESSAGE_LINE
+            + "OOPS!!! I'm sorry! I don't know what that means.\n"
+            + "Do you mean \"orders delete\"? If so, input <orders delete>.\n"
+            + "Alternatively, input <orders> or <help> for more information.\n"
+            + MESSAGE_LINE;
     public static final String MESSAGE_ASK_FOR_ITEM_FIELD_TO_BE_UPDATED = MESSAGE_LINE
             + "What would you like to update, price or stock? (p/s)\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_PRICE = MESSAGE_LINE
             + "What is the revised item price?\n";
-    public static final String MESSAGE_SHOW_UPDATE_ITEM_PRICE = MESSAGE_LINE
-            + "Done! I just updated the item price for you.\n"
-            + MESSAGE_LINE;
     public static final String MESSAGE_WRONG_ITEM_FIELD_COMMAND = MESSAGE_LINE
             + "OOPS!!! I'm sorry! I don't know what that means.\n"
             + "Please input either \"p\" for (item) price or s for (item) stock.\n"
@@ -262,9 +267,6 @@ public class Messages {
             + "Empty item index.\n";
     public static final String MESSAGE_ASK_FOR_REVISED_ITEM_STOCK = MESSAGE_LINE
             + "What is the revised item stock?\n";
-    public static final String MESSAGE_SHOW_UPDATE_ITEM_STOCK = MESSAGE_LINE
-            + "Done! I just updated the item stock for you.\n"
-            + MESSAGE_LINE;
     public static final String MESSAGE_EMPTY_ORDER = MESSAGE_LINE
             + "No items added to the order. Please input `orders add` "
             + "command again!\n"
@@ -282,10 +284,6 @@ public class Messages {
             + "Invalid input format while adding items to order.\n"
             + "Note that <item_index> and <item_quantity> needs to be whole numbers.\n"
             + "Please retry adding items to the order.\n"
-            + MESSAGE_LINE;
-    public static final String MESSAGE_INVALID_FORMAT_ORDERS_ADD = MESSAGE_LINE
-            + "Invalid format for inputting of items into order.\n"
-            + "Please retry orders add command.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_ITEM_NOT_FOUND = MESSAGE_LINE
             + "Sorry! No relevant item is found in the warehouse.\n"
@@ -333,8 +331,13 @@ public class Messages {
             + "As you have not sold any single item yet.\n"
             + MESSAGE_LINE;
     public static final String MESSAGE_RECEIPT_HEADER = MESSAGE_LINE + "Order details as shown below\n";
+    public static final String MESSAGE_ITEM_NAME_TOO_LONG = MESSAGE_LINE
+            + "Item name inputted is too lengthy.\n"
+            + "Note that the item name length limit is 30 characters including spaces.\n"
+            + "Please try items add <item_name> again if you wish to add an item.\n"
+            + MESSAGE_LINE;
     public static final String MESSAGE_CUSTOMER_NAME_TOO_LONG = MESSAGE_LINE
-            + "Customer name inputted is too length.\n"
+            + "Customer name inputted is too lengthy.\n"
             + "Note that the customer name length limit is 30 characters including spaces.\n"
             + "Please try orders add <customer_name> again if you wish to add an order.\n"
             + MESSAGE_LINE;
