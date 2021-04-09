@@ -196,19 +196,20 @@ processing user input will be discussed in future sections.
 
 ## 3.2. Loading of save data
 
-![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/113980223-cb586f00-9878-11eb-87a7-1ba5d501b09d.png)
+![LoadFile Diagram](https://user-images.githubusercontent.com/57165946/114195903-77867c80-9983-11eb-9e76-587739948d14.png)
 
 As seen form the sequence diagram above (note that some trivial details are removed from the diagram), when loadFile 
 method in SaveData class is being executed,
 1. Show the user a message that it is looking for save data.
-2. Check whether the save file exists (not shown in the diagram).
-3. If the save data does not exist, it will terminate the loadFile method.
-4. If the save data exists, it will show the user a message that it is loading the save data.
-5. Create a scanner object using the save file (not shown in the diagram).
-6. Read return a line in the save data.
-7. Process the line of input from the save data.
-8. Repeat step 6 and 7 until there no more lines to be read from the save data.
-9. Show the user that the save data has been successfully loaded.
+2. Creates a file object with pathname of the save file.   
+3. Check whether the save file exists through the file object previously created.
+4. If the save file does not exist, it will terminate the loadFile method and show the user that no save data was found.
+5. If the save file exists, it will show the user a message that it is loading the save data.
+6. Create a scanner object using the save file.
+7. Read the first line in the save data.
+8. Process the line of input from the save data.
+9. Repeat step 6 and 7 until there no more lines to be read from the save data.
+10. Show the user that the save data has been successfully loaded.
 
 ## 3.3. Creation or saving of save data
 
