@@ -24,7 +24,7 @@ public class OrdersDeleteCommand extends OrdersCommand {
         }
         boolean stopAskingForOrderIndex = false;
         String orderIndexInString = " ";
-        while (!stopAskingForOrderIndex) {
+        while (!stopAskingForOrderIndex && !orderIndexInString.equals(Constants.GIVE_UP_DELETE_SIGNAL)) {
             ui.askForOrderIndex();
             OrdersListCommand ordersListCommand = new OrdersListCommand();
             ordersListCommand.execute(orderManager);
@@ -32,6 +32,10 @@ public class OrdersDeleteCommand extends OrdersCommand {
             orderIndexInString = ui.askForUserInput();
 
             try {
+                if (orderIndexInString.equals(Constants.GIVE_UP_DELETE_SIGNAL)) {
+                    ui.showMessageLine();
+                    break;
+                }
                 if (orderIndexInString.equals("")) {
                     throw new EmptyOrderIndexException();
                 }

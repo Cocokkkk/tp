@@ -17,6 +17,10 @@ public class Ui {
         return SCANNER.nextLine().trim();
     }
 
+    public void showMessageLine() {
+        System.out.println(Messages.MESSAGE_LINE);
+    }
+
     public void showGreeting() {
         System.out.print(Messages.MESSAGE_GREETING);
     }
